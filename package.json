@@ -1,0 +1,30 @@
+{
+	"name": "my-app",
+	"version": "1.0.1",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "electron .",
+		"publish": "electron-builder --win -p always"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"electron": "^1.7.9",
+		"electron-builder": "^19.37.2"
+	},
+	"build": {
+		"publish": {
+			"provider": "generic",
+			"url": "http://localhost/release"
+		},
+		"win": {
+			"target": "nsis-web"
+		}
+	},
+	"dependencies": {
+		"electron-log": "^2.2.9",
+		"electron-updater": "^2.13.0"
+	}
+}
