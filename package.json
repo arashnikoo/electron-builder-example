@@ -1,12 +1,13 @@
 {
 	"name": "my-app",
-	"version": "1.0.1",
+	"appName": "My First App",
+	"version": "1.0.6",
 	"description": "",
 	"main": "main.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "electron .",
-		"publish": "electron-builder --win -p always"
+		"publish": "electron-builder --win"
 	},
 	"author": "",
 	"license": "ISC",
@@ -15,12 +16,18 @@
 		"electron-builder": "^19.37.2"
 	},
 	"build": {
+		"productName": "My First App",
 		"publish": {
 			"provider": "generic",
 			"url": "http://localhost/release"
 		},
 		"win": {
-			"target": "nsis-web"
+			"target": "nsis"
+		},
+		"nsis": {
+			"oneClick": false,
+			"perMachine": true,
+			"allowToChangeInstallationDirectory": true
 		}
 	},
 	"dependencies": {
